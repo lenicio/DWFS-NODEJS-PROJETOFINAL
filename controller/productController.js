@@ -10,6 +10,7 @@ class ProductController {
     }
   }
 
+
   static async listView(req, res) {
 try {
       const products = await Product.getAll();
@@ -18,6 +19,7 @@ try {
       res.status(500).json({error});
     }
   }
+
 
   static async getById(req, res) {
     try {
