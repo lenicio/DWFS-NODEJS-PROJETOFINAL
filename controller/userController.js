@@ -150,6 +150,14 @@ class UserController {
         .json({ success: false, message: "Email inválido!" });
     }
 
+    if (!name) {
+      name = user[0].name;
+    }
+
+    if (!email) {
+      email = user[0].email;
+    }
+
     user = {
       name: name,
       email: email,
