@@ -31,7 +31,7 @@ Para executar a aplicação, execute o comando `npm start` na raiz do projeto. I
 
 O sistema fornece as seguintes views:
 
-- ** Realizar login/registrar **
+- **Realizar login/registrar**
 
   - `GET /login`
   - Exibe a página de login/registrar.
@@ -42,6 +42,10 @@ O sistema fornece as seguintes views:
   - Retorna uma lista de todos os produtos.
 
 ## API Endpoints
+
+- `Todas as rotas da API são prefixadas com /api/v1`
+- `Todas as rotas da API requerem autenticação via JWT (JSON Web Token)`
+- `Todas as rotas da API retornam dados no formato JSON`
 
 ### Gerenciamento de Produtos
 
