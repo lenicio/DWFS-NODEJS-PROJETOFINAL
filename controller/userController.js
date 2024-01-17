@@ -144,18 +144,18 @@ class UserController {
     let name = req.body.name;
     let email = req.body.email;
 
-    if (!validator.isEmail(email)) {
-      return res
-        .status(400)
-        .json({ success: false, message: "Email inválido!" });
-    }
-
     if (!name) {
       name = user[0].name;
     }
 
     if (!email) {
       email = user[0].email;
+    } else {
+      if (!validator.isEmail(email)) {
+        return res
+          .status(400)
+          .json({ success: false, message: "Email inválido!" });
+      }
     }
 
     user = {
