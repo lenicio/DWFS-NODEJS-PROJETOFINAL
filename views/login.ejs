@@ -131,7 +131,7 @@
       let url = '<%= serverBaseUrl %>';
 
       $.ajax({
-        url: '/auth',
+        url: '/api/v1/users/auth',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
@@ -175,7 +175,7 @@
       let url = '<%= serverBaseUrl %>';
 
       $.ajax({
-        url: '/user',
+        url: '/api/v1/users',
         type: 'POST',
         contentType: 'application/json',
         data: JSON.stringify({
