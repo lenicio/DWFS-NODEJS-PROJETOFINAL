@@ -10,6 +10,14 @@ class ProductController {
     }
   }
 
+  static async listView(req, res) {
+try {
+      const products = await Product.getAll();
+      res.render('products', {products: products, serverBaseUrl: process.env.SERVER_BASE_URL});
+    } catch (error) {
+      res.status(500).json({error});
+    }
+  }
 
   static async getById(req, res) {
     try {
@@ -70,12 +78,14 @@ class ProductController {
         res.status(404).json({message: 'Product not found'});
         return;
       }
+      console.log(reqBody);
 
       const newProduct = {
         "description": reqBody.description || product[0].description,
         "price": reqBody.price || product[0].price,
         "brand": reqBody.brand || product[0].brand,
       };
+
 
 
       newProduct.price = parseFloat(newProduct.price);
